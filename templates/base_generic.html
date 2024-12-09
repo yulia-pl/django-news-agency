@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}News Agency{% endblock %}</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Crispy Forms CSS -->
+    {% load crispy_forms_tags %}
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <nav class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
+                <div class="position-sticky pt-3">
+                    <h5 class="text-center">Навігація</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="{% url 'home' %}">Головна</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'newspaper-list' %}">Список газет</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'redactor-list' %}">Список редакторів</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'newspaper-create' %}">Додати газету</a>
+                        </li>
+                        {% if user.is_authenticated %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'logout' %}">Вихід</a>
+                            </li>
+                        {% else %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'login' %}">Вхід</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'register' %}">Реєстрація</a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Main Content -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                {% block content %}
+                {% endblock %}
+            </main>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

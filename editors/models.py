@@ -5,4 +5,4 @@ class Redactor(AbstractUser):
     years_of_experience = models.PositiveIntegerField(default=0)
 
     def __str__(self):
-        return f"{self.username} ({self.years_of_experience} years)"
+        return f"{self.username} ({self.years_of_experience} років)"

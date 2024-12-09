@@ -1,0 +1,16 @@
+{% extends 'base_generic.html' %}
+
+{% block title %}Список газет{% endblock %}
+
+{% block content %}
+<h1 class="mt-4">Список газет</h1>
+<ul class="list-group">
+    {% for newspaper in object_list %}
+        <li class="list-group-item">
+            <a href="{% url 'newspaper-detail' newspaper.id %}">{{ newspaper.title }}</a>
+        </li>
+    {% empty %}
+        <li class="list-group-item">Немає доступних газет.</li>
+    {% endfor %}
+</ul>
+{% endblock %}

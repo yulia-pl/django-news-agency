@@ -1,3 +1,10 @@
-from django.shortcuts import render
+from django.views.generic import ListView, DetailView
+from .models import Redactor
 
-# Create your views here.
+class RedactorListView(ListView):
+    model = Redactor
+    template_name = 'editors/redactor_list.html'
+
+class RedactorDetailView(DetailView):
+    model = Redactor
+    template_name = 'editors/redactor_detail.html'

@@ -1,0 +1,22 @@
+{% extends 'base_generic.html' %}
+
+{% block title %}{{ redactor.username }}{% endblock %}
+
+{% block content %}
+<h2 class="mt-4">{{ redactor.username }}</h2>
+<p><strong>Ім'я:</strong> {{ redactor.first_name }}</p>
+<p><strong>Прізвище:</strong> {{ redactor.last_name }}</p>
+<p><strong>Email:</strong> {{ redactor.email }}</p>
+<p><strong>Стаж роботи:</strong> {{ redactor.years_of_experience }} років</p>
+
+<h4>Газети редактора:</h4>
+<ul>
+    {% for newspaper in redactor.newspapers.all %}
+        <li>{{ newspaper.title }}</li>
+    {% empty %}
+        <li>Немає газет.</li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'redactor-list' %}" class="btn btn-primary mt-3">Назад до списку</a>
+{% endblock %}

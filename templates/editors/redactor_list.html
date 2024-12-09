@@ -1,0 +1,16 @@
+{% extends 'base_generic.html' %}
+
+{% block title %}Список редакторів{% endblock %}
+
+{% block content %}
+<h1 class="mt-4">Список редакторів</h1>
+<ul class="list-group">
+    {% for redactor in object_list %}
+        <li class="list-group-item">
+            <a href="{% url 'redactor-detail' redactor.id %}">{{ redactor.username }}</a>
+        </li>
+    {% empty %}
+        <li class="list-group-item">Немає доступних редакторів.</li>
+    {% endfor %}
+</ul>
+{% endblock %}

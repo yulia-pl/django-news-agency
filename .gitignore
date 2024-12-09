@@ -12,4 +12,5 @@ __pycache__/
 /images/
 static/admin/fonts/*.woff
 identifier.sqlite
+db.sqlite3
 

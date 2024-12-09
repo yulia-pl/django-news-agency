@@ -1,14 +1,14 @@
 {% extends 'base_generic.html' %}
 {% load crispy_forms_filters %}
 
-{% block title %}Створити газету{% endblock %}
+{% block title %}Create Newspaper{% endblock %}
 
 {% block content %}
-<h2 class="mt-4">Створити нову газету</h2>
+<h2 class="mt-4">Create a New Newspaper</h2>
 <form method="post">
     {% csrf_token %}
     {{ form|crispy }}
-    <button type="submit" class="btn btn-success mt-3">Зберегти</button>
+    <button type="submit" class="btn btn-success mt-3">Save</button>
 </form>
-<a href="{% url 'newspaper-list' %}" class="btn btn-secondary mt-3">Скасувати</a>
+<a href="{% url 'newspaper-list' %}" class="btn btn-secondary mt-3">Cancel</a>
 {% endblock %}

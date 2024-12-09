@@ -1,16 +1,28 @@
 {% extends 'base_generic.html' %}
 
-{% block title %}Список газет{% endblock %}
+{% block title %}Newspaper List{% endblock %}
 
 {% block content %}
-<h1 class="mt-4">Список газет</h1>
-<ul class="list-group">
-    {% for newspaper in object_list %}
-        <li class="list-group-item">
-            <a href="{% url 'newspaper-detail' newspaper.id %}">{{ newspaper.title }}</a>
-        </li>
-    {% empty %}
-        <li class="list-group-item">Немає доступних газет.</li>
-    {% endfor %}
-</ul>
+    <div class="container mt-5">
+        <h1 class="mt-4 text-center">Newspaper List</h1>
+        <p class="lead text-center">Here you can see a list of all the newspapers published by the agency.</p>
+
+        <div class="mb-3">
+            <a href="{% url 'newspaper-create' %}" class="btn btn-purple">Create New Newspaper</a>
+        </div>
+
+        <div class="list-group">
+            {% for newspaper in object_list %}
+                <a href="{% url 'newspaper-detail' newspaper.id %}" class="list-group-item list-group-item-action">
+                    <h5 class="mb-1">{{ newspaper.title }}</h5>
+                    <p class="mb-1">Topic: {{ newspaper.topic.name }}</p>
+                    <small>Published on: {{ newspaper.published_date }}</small>
+                </a>
+            {% empty %}
+                <div class="alert alert-warning" role="alert">
+                    No newspapers available.
+                </div>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}

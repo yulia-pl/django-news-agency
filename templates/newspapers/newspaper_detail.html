@@ -4,18 +4,18 @@
 
 {% block content %}
 <h2 class="mt-4">{{ newspaper.title }}</h2>
-<p><strong>Тема:</strong> {{ newspaper.topic.name }}</p>
-<p><strong>Дата публікації:</strong> {{ newspaper.published_date }}</p>
+<p><strong>Topic:</strong> {{ newspaper.topic.name }}</p>
+<p><strong>Publication Date:</strong> {{ newspaper.published_date }}</p>
 <p>{{ newspaper.content }}</p>
 
-<h4>Редактори:</h4>
+<h4>Editors:</h4>
 <ul>
     {% for redactor in newspaper.publishers.all %}
         <li>{{ redactor.username }}</li>
     {% empty %}
-        <li>Немає редакторів.</li>
+        <li>No editors assigned.</li>
     {% endfor %}
 </ul>
 
-<a href="{% url 'newspaper-list' %}" class="btn btn-primary mt-3">Назад до списку</a>
+<a href="{% url 'newspaper-list' %}" class="btn btn-primary mt-3">Back to List</a>
 {% endblock %}

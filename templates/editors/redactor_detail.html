@@ -4,19 +4,19 @@
 
 {% block content %}
 <h2 class="mt-4">{{ redactor.username }}</h2>
-<p><strong>Ім'я:</strong> {{ redactor.first_name }}</p>
-<p><strong>Прізвище:</strong> {{ redactor.last_name }}</p>
+<p><strong>First Name:</strong> {{ redactor.first_name }}</p>
+<p><strong>Last Name:</strong> {{ redactor.last_name }}</p>
 <p><strong>Email:</strong> {{ redactor.email }}</p>
-<p><strong>Стаж роботи:</strong> {{ redactor.years_of_experience }} років</p>
+<p><strong>Years of Experience:</strong> {{ redactor.years_of_experience }} years</p>
 
-<h4>Газети редактора:</h4>
+<h4>Newspapers Edited by {{ redactor.username }}:</h4>
 <ul>
     {% for newspaper in redactor.newspapers.all %}
         <li>{{ newspaper.title }}</li>
     {% empty %}
-        <li>Немає газет.</li>
+        <li>No newspapers assigned.</li>
     {% endfor %}
 </ul>
 
-<a href="{% url 'redactor-list' %}" class="btn btn-primary mt-3">Назад до списку</a>
+<a href="{% url 'redactor-list' %}" class="btn btn-primary mt-3">Back to List</a>
 {% endblock %}

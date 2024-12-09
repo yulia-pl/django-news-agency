@@ -1,30 +1,37 @@
-from django.contrib.auth import login, logout
-from django.contrib.auth.views import LoginView
-from django.shortcuts import redirect, render
+from django.contrib.auth.views import LoginView, LogoutView
+from django.views.generic import CreateView, DetailView, UpdateView
 from django.urls import reverse_lazy
-from django.views import View
-from .forms import RegisterForm
+from .forms import UserRegistrationForm
+from django.contrib.auth.models import User
 
 
-class RegisterView(View):
-    def get(self, request):
-        form = RegisterForm()
-        return render(request, 'accounts/register.html', {'form': form})
-
-    def post(self, request):
-        form = RegisterForm(request.POST)
-        if form.is_valid():
-            user = form.save()
-            login(request, user)
-            return redirect('newspaper-list')
-        return render(request, 'accounts/register.html', {'form': form})
-
-
-class CustomLoginView(LoginView):
+class AccountLoginView(LoginView):
     template_name = 'accounts/login.html'
 
 
-class LogoutView(View):
-    def get(self, request):
-        logout(request)
-        return redirect('login')
+class AccountLogoutView(LogoutView):
+    next_page = 'home'
+
+
+class AccountRegisterView(CreateView):
+    form_class = UserRegistrationForm
+    template_name = 'accounts/register.html'
+    success_url = reverse_lazy('login')
+
+
+class AccountDetailView(DetailView):
+    model = User
+    template_name = 'accounts/profile.html'
+    context_object_name = 'user'
+
+
+class AccountUpdateView(UpdateView):
+    model = User
+    fields = ['username', 'email', 'first_name', 'last_name']
+    template_name = 'editors/redactor_form.html'
+
+    def get_object(self, **kwargs):
+        return self.request.user
+
+    def get_success_url(self):
+        return reverse_lazy('profile')

@@ -50,7 +50,7 @@ LOGIN_REDIRECT_URL = 'newspaper-list'
 LOGOUT_REDIRECT_URL = 'login'
 LOGIN_URL = 'login'
 
-AUTH_USER_MODEL = 'editors.Redactor'
+AUTH_USER_MODEL = 'accounts.Redactor'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

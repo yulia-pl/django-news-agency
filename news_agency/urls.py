@@ -1,11 +1,10 @@
-from django.contrib import admin
 from django.urls import path, include
-from newspapers.views import HomeView
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('accounts/', include('accounts.urls')),
-    path('editors/', include('editors.urls')),
-    path('newspapers/', include('newspapers.urls')),
-    path('', HomeView.as_view(), name='home'),
+    path('accounts/', include('accounts.urls')),  # Інклюдимо URL для акаунтів
+    path('editors/', include('editors.urls')),    # Інклюдимо URL для редакторів
+    path('newspapers/', include('newspapers.urls')),  # Інклюдимо URL для газет
+
+    # Головна сторінка
+    path('', include('newspapers.urls')),  # Для простоти головна буде по вбудованому додатку
 ]

@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accounts',
     'editors',
+    'news_agency',
     'newspapers',
     'crispy_forms',
     'crispy_bootstrap4',

@@ -1,0 +1,23 @@
+[
+    {
+        "model": "newspapers.topic",
+        "pk": 1,
+        "fields": {
+            "name": "Technology News"
+        }
+    },
+    {
+        "model": "newspapers.topic",
+        "pk": 2,
+        "fields": {
+            "name": "Business News"
+        }
+    },
+    {
+        "model": "newspapers.topic",
+        "pk": 3,
+        "fields": {
+            "name": "Health & Wellness"
+        }
+    }
+]

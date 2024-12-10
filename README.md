@@ -1,25 +1,27 @@
-# Інформаційне Агентство
+# News Agency
 
-Цей проект створений для відстеження газет і редакторів, які відповідають за кожен випуск. Реалізовано за допомогою Django 4.1.
+This project is built to track newspapers and the editors responsible for each publication. 
+It is implemented using **Django 4.1**.
 
-## Встановлення
+## Features
 
-1. Клонуйте репозиторій:
+- **Newspapers Management:** Store and display details of newspapers, 
+- including topics and their respective editors.
+- **Editors Management:** Manage editor profiles, 
+- including experience and associated newspapers.
+- **Authentication:** Users can register, log in, 
+- and access content based on their roles (admin, editor).
+- **Responsive Design:** Built using **Bootstrap**,
+- ensuring the platform is accessible on both desktop and mobile devices.
 
-   ```bash
-   git clone https://github.com/yulia-pl/django-news-agency.git
-   cd django-news-agency
+---
 
-2. Активуйте віртуальне середовище:
+## Installation
 
-source venv/bin/activate  # Для Windows: venv\Scripts\activate
+To get the project up and running locally, follow the steps below:
 
-3. Встановіть залежності:
+### 1. Clone the Repository:
 
-pip install -r requirements.txt
-
-4. Застосуйте міграції та запустіть сервер:
-
-python manage.py migrate
-python manage.py runserver
-
+```bash
+git clone https://github.com/yulia-pl/django-news-agency.git
+cd django-news-agency

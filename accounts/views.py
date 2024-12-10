@@ -3,6 +3,7 @@ from django.views.generic import CreateView, DetailView, UpdateView
 from django.urls import reverse_lazy
 from .forms import UserRegistrationForm
 from django.contrib.auth.models import User
+from .models import Redactor
 
 
 class AccountLoginView(LoginView):
@@ -23,6 +24,9 @@ class AccountDetailView(DetailView):
     model = User
     template_name = 'accounts/profile.html'
     context_object_name = 'user'
+
+    def get_queryset(self):
+        return super().get_queryset().select_related('redactor')
 
 
 class AccountUpdateView(UpdateView):

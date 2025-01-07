@@ -1,0 +1,106 @@
+[
+{
+    "model": "accounts.redactor",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$390000$vdYiRvfggjxwHpWx5Zajnq$GoizrkLf34n1UjjZuuifAokE6PbaLWewpEn1hIk8IEw=",
+        "last_login": "2024-12-10T06:31:49.522Z",
+        "is_superuser": false,
+        "username": "NeoMatrix007",
+        "first_name": "",
+        "last_name": "",
+        "email": "john@example.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-12-10T05:08:57.559Z",
+        "years_of_experience": 1,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "editors.redactor",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$120000$NTg0t5R0P2nl$fbXzxk02NmwpTq5yA3wnTbV4kVAebGG64WGGsMi5+I0=",
+        "last_login": null,
+        "is_superuser": true,
+        "username": "john_doe",
+        "first_name": "John",
+        "last_name": "Doe",
+        "email": "john.doe@example.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2024-12-10T05:04:01.647Z",
+        "years_of_experience": 10,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "editors.redactor",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$120000$NTg0t5R0P2nl$fbXzxk02NmwpTq5yA3wnTbV4kVAebGG64WGGsMi5+I0=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "sarah_connor",
+        "first_name": "Sarah",
+        "last_name": "Connor",
+        "email": "sarah.connor@example.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2024-12-10T05:04:01.664Z",
+        "years_of_experience": 8,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "newspapers.topic",
+    "pk": 1,
+    "fields": {
+        "name": "Technology News"
+    }
+},
+{
+    "model": "newspapers.topic",
+    "pk": 2,
+    "fields": {
+        "name": "Business News"
+    }
+},
+{
+    "model": "newspapers.topic",
+    "pk": 3,
+    "fields": {
+        "name": "Health & Wellness"
+    }
+},
+{
+    "model": "newspapers.newspaper",
+    "pk": 1,
+    "fields": {
+        "title": "Tech Innovations Today",
+        "content": "This is the content of Tech Innovations Today, covering the latest breakthroughs in technology, gadgets, and the digital world. From AI advancements to the newest smartphone releases, we cover it all.",
+        "published_date": "2024-12-01",
+        "topic": 1,
+        "publishers": [
+            1
+        ]
+    }
+},
+{
+    "model": "newspapers.newspaper",
+    "pk": 2,
+    "fields": {
+        "title": "Local Insights",
+        "content": "Local Insights Journal brings you stories that matter most to your community. From local government updates to human interest pieces, we aim to keep you informed about the happenings in your town.",
+        "published_date": "2024-12-03",
+        "topic": 2,
+        "publishers": [
+            1
+        ]
+    }
+}
+]

@@ -1,0 +1,25 @@
+{% extends 'base_generic.html' %}
+{% load crispy_forms_filters %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+  <div class="container mt-5">
+    <h2 class="text-center mb-4">New user registration</h2>
+    <form method="post">
+      {% csrf_token %}
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="card p-4">
+            <div class="card-body">
+              {{ form|crispy }}
+              <div class="form-group text-center">
+                <button type="submit" class="btn btn-primary">Register</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+{% endblock %}

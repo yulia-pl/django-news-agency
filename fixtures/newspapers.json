@@ -1,0 +1,35 @@
+[
+    {
+        "model": "newspapers.newspaper",
+        "pk": 1,
+        "fields": {
+            "title": "Tech World Today",
+            "content": "This is the content of Tech World Today, covering the latest advancements in technology.",
+            "published_date": "2024-12-10",
+            "topic": 1,
+            "publishers": [1, 2]
+        }
+    },
+    {
+        "model": "newspapers.newspaper",
+        "pk": 2,
+        "fields": {
+            "title": "Business Insights Weekly",
+            "content": "The latest trends in the world of business, including finance, entrepreneurship, and market analysis.",
+            "published_date": "2024-12-09",
+            "topic": 2,
+            "publishers": [1]
+        }
+    },
+    {
+        "model": "newspapers.newspaper",
+        "pk": 3,
+        "fields": {
+            "title": "Health & Wellness Journal",
+            "content": "This journal covers health tips, wellness trends, medical advancements, and fitness news.",
+            "published_date": "2024-12-08",
+            "topic": 3,
+            "publishers": [2]
+        }
+    }
+]

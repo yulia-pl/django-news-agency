@@ -1,0 +1,32 @@
+[
+    {
+        "model": "editors.redactor",
+        "pk": 1,
+        "fields": {
+            "username": "john_doe",
+            "first_name": "John",
+            "last_name": "Doe",
+            "email": "john.doe@example.com",
+            "password": "pbkdf2_sha256$120000$NTg0t5R0P2nl$fbXzxk02NmwpTq5yA3wnTbV4kVAebGG64WGGsMi5+I0=",
+            "is_staff": true,
+            "is_active": true,
+            "is_superuser": true,
+            "years_of_experience": 10
+        }
+    },
+    {
+        "model": "editors.redactor",
+        "pk": 2,
+        "fields": {
+            "username": "sarah_connor",
+            "first_name": "Sarah",
+            "last_name": "Connor",
+            "email": "sarah.connor@example.com",
+            "password": "pbkdf2_sha256$120000$NTg0t5R0P2nl$fbXzxk02NmwpTq5yA3wnTbV4kVAebGG64WGGsMi5+I0=",
+            "is_staff": true,
+            "is_active": true,
+            "is_superuser": false,
+            "years_of_experience": 8
+        }
+    }
+]

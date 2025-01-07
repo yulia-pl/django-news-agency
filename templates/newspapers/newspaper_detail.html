@@ -1,0 +1,21 @@
+{% extends 'base_generic.html' %}
+
+{% block title %}{{ newspaper.title }}{% endblock %}
+
+{% block content %}
+<h2 class="mt-4">{{ newspaper.title }}</h2>
+<p><strong>Topic:</strong> {{ newspaper.topic.name }}</p>
+<p><strong>Publication Date:</strong> {{ newspaper.published_date }}</p>
+<p>{{ newspaper.content }}</p>
+
+<h4>Editors:</h4>
+<ul>
+    {% for redactor in newspaper.publishers.all %}
+        <li>{{ redactor.username }}</li>
+    {% empty %}
+        <li>No editors assigned.</li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'newspaper-list' %}" class="btn btn-primary mt-3">Back to List</a>
+{% endblock %}
